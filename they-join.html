@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/pajoy/2/edit
+-->
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+
+<script>
+var width= 400;
+var height= 400;
+var squaretall= 2;
+var amount= 1500;
+var multiplier=10000;
+var endpoint= 8;
+var time= [];
+
+var makise= Raphael(0, 0, width, height);
+var newman=[];
+for (var i=0; i<amount; i++){
+  newman[i]= makise.rect(i*width/amount,0,width/amount,squaretall);
+}
+for (var q=0; q<amount; q++){
+  time[q]=Math.random()*multiplier;
+newman[q].animate({x:width/endpoint, y:height-squaretall}, time[q]);
+}
+</script>
+</body>
+</html>
